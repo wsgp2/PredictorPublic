@@ -1,18 +1,95 @@
-![Python](https://img.shields.io/badge/Python-3.x-red) ![ML](https://img.shields.io/badge/Machine-Learning-blue) ![LSTM](https://img.shields.io/badge/Model-LSTM-lightgrey) ![TF](https://img.shields.io/badge/TensorFlow-2.x-orange) ![Status](https://img.shields.io/badge/Status-Completed-success) ![DS](https://img.shields.io/badge/Data-Science-ff69b4)
+# Прогнозирование цены Bitcoin с использованием LSTM
 
-# BitCoin Price Prediction Using LSTM Project
+Проект по предсказанию цены Bitcoin с использованием нейронной сети LSTM, технических индикаторов и индекса страха и жадности.
 
-This Repository contains the BitCoin Price Prediction using LSTM Project.
+## Особенности
 
-**ABOUT:** This Project on BitCoin Price Prediction is created using Stacked LSTM (Long Short Term Memory) Model. The BitCoin Dataset is used here from Yahoo Finance. And  the dataset was acquired using the Pandas DataReader.
+- Использование LSTM (Long Short-Term Memory) для прогнозирования
+- Расширенный набор технических индикаторов:
+  - RSI (Relative Strength Index)
+  - MACD (Moving Average Convergence Divergence)
+  - OBV (On-Balance Volume)
+- Учет индекса страха и жадности (Fear and Greed Index)
+- Улучшенная нормализация данных для точных предсказаний
+- Визуализация результатов прогнозирования с сохранением графиков
+- Автоматическое сохранение обученной модели
+- Проверка размерности входных данных для надежности предсказаний
 
-Download Dataset from: [Here](https://www.kaggle.com/imsid777/bitcoin-dataset)
+## Требования
 
-**Outputs:**
+```
+numpy==1.24.3
+pandas==2.1.0
+yfinance
+scikit-learn==1.3.0
+tensorflow==2.13.0
+matplotlib==3.7.2
+requests
+keras==2.13.1
+```
 
-CLOSING Rate from Dataset:
-![alt text](https://github.com/sidgolangade/BitCoin-Price-Prediction-Using-LSTM-Project/blob/master/BTC%20Prediction%20using%20LSTM/Output%20Images/Screenshot%202020-07-13%20at%2012.15.25%20p.m..jpg)
+## Установка
 
+1. Клонируйте репозиторий
+2. Установите зависимости:
+```bash
+pip install -r requirements.txt
+```
+
+## Использование
+
+Запустите скрипт:
+```bash
+python bitcoin_prediction.py
+```
+
+Скрипт выполнит следующие действия:
+1. Загрузит исторические данные о цене Bitcoin
+2. Получит данные индекса страха и жадности
+3. Рассчитает технические индикаторы
+4. Обучит LSTM модель
+5. Создаст и сохранит графики:
+   - `prediction_results.png` - график реальных данных и предсказаний
+   - `training_history.png` - график процесса обучения
+6. Сохранит обученную модель в директории `model`
+7. Сделает прогноз цены на следующие 7 дней
+
+## Структура проекта
+
+- `bitcoin_prediction.py` - основной скрипт с реализацией модели
+- `requirements.txt` - файл зависимостей
+- `model/` - директория для сохранения обученной модели
+- `prediction_results.png` - график результатов предсказания
+- `training_history.png` - график процесса обучения
+- `README.md` - документация проекта
+- `CHANGELOG.md` - история изменений
+
+## Результаты
+
+Модель учитывает следующие параметры:
+- Цена закрытия Bitcoin
+- Объем торгов
+- Индекс страха и жадности
+- Технические индикаторы (RSI, MACD, OBV)
+
+Результаты визуализируются в двух графиках:
+1. График предсказаний (`prediction_results.png`):
+   - Реальные данные
+   - Предсказания на обучающей выборке
+   - Предсказания на тестовой выборке
+   - Прогноз на следующие 7 дней
+
+2. График обучения (`training_history.png`):
+   - Ошибка на обучающей выборке
+   - Ошибка на проверочной выборке
+
+## Точность модели
+
+- Модель использует расширенный набор технических индикаторов для улучшения точности предсказаний
+- Проверка размерности входных данных обеспечивает надежность предсказаний
+- Улучшенная нормализация данных помогает модели лучше обрабатывать различные масштабы признаков
+
+## Лицензия
 
 MIT License
 
