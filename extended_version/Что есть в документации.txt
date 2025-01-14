@@ -1,0 +1,2545 @@
+/api/kline/lists (VIP1)
+
+
+KLine
+
+
+GET
+/api/kline/lists
+Kline （VIP1）
+
+Return the historical K-line of each exchange
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+symbol
+string
+(query)
+symbol
+
+Example : BTCUSDT
+
+BTCUSDT
+exchange
+string
+(query)
+Binance OKX Bybit Huobi Bitmex Bitget Gate
+
+Example : Binance
+
+Binance
+interval
+string
+(query)
+1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 1d
+
+Example : 5m
+
+5m
+endTime
+string
+(query)
+Returns data before this timestamp
+
+Example : 1730087252496
+
+1730087252496
+size
+string
+(query)
+MAX 500
+
+Example : 10
+
+10
+productType
+string
+(query)
+SWAP or SPOT
+
+Example : SWAP
+
+SWAP
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+
+
+/api/fundingRate/current (VIP1)
+GET
+/api/fundingRate/current
+Real-time FundingRate(VIP1)
+
+Returns real-time funding rates for all exchange coins
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+type
+string
+(query)
+current,day,week,month,year
+
+Example : current
+
+current 
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{}
+No links
+
+/api/openInterest/v2/chart (VIP1)
+GET
+/api/openInterest/v2/chart
+Exchange History Chart(VIP1)
+
+This API retrieves historical open interest data for a cryptocurrency from exchanges
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+baseCoin *
+string
+(query)
+Example : BTC
+
+BTC
+exchange
+string
+(query)
+Binance,OKX,Bybit,Gate,Huobi,Bitget,Bitmex,dYdX,Bitfinex,CME,Kraken,Deribit
+
+Example :
+
+exchange
+interval *
+string
+(query)
+Example : 1h
+
+1h
+size
+string
+(query)
+default 100 max 500
+
+Example : 10
+
+10
+type
+string
+(query)
+USD OR COIN name eg:BTC
+
+Example : USD
+
+USD
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Examples
+
+Success
+Example Value
+Schema
+{
+  "success": true,
+  "code": "1",
+  "data": {
+    "tss": [
+      1725983155339,
+      1725980400000,
+      1725976800000,
+      1725973200000,
+      1725969600000,
+      1725966000000,
+      1725962400000,
+      1725958800000,
+      1725955200000,
+      1725951600000,
+      1725948000000
+    ],
+    "prices": [
+      56912.9,
+      56706,
+      57169.1,
+      57190.1,
+      57140,
+      57054.9,
+      57024.5,
+      57183.2,
+      56797.5,
+      56910.8
+    ],
+    "dataValues": {
+      "Binance": [
+        120064.604,
+        119987.073,
+        120637.148,
+        119831.719,
+        119756.309,
+        119966.931,
+        120298.03,
+        120208.275,
+        119984.354,
+        119790.445,
+        119769.907
+      ],
+      "Bitfinex": [
+        6553.24445106,
+        6563.50838433,
+        6564.30373245,
+        6565.44079997,
+        6564.57050874,
+        6564.78958296,
+        6563.30326223,
+        6564.35177527,
+        6562.49401847,
+        6563.60862149,
+        6563.62747918
+      ],
+      "Bitget": [
+        91176.017,
+        91156.989,
+        91694.265,
+        91001.263,
+        90716.941,
+        90761.874,
+        90114.833,
+        90169.876,
+        90580.466,
+        90875.465,
+        90786.742
+      ],
+      "Bitmex": [
+        5862.262528,
+        5892.339614,
+        5903.806408,
+        5831.606786,
+        5853.634247,
+        5869.66811,
+        5906.56616,
+        5911.467407,
+        5905.314446,
+        5913.112091,
+        5901.991381
+      ],
+      "Bybit": [
+        75497.183,
+        75654.84,
+        75663.685,
+        75607.541,
+        75791.95,
+        75548.608,
+        75462.941,
+        75313.028,
+        74976.065,
+        74649.104,
+        74391.153
+      ],
+      "CME": [
+        142718.6,
+        142718.6,
+        142308.5,
+        142308.5,
+        142308.5,
+        142308.5,
+        142308.5,
+        142308.5,
+        142308.5,
+        142308.5,
+        142308.5
+      ],
+      "Deribit": [
+        25497.8641,
+        25517.147315,
+        25625.450156,
+        25406.305523,
+        25370.527753,
+        25355.198763,
+        25387.177116,
+        25422.254835,
+        25336.893361,
+        25368.869826,
+        25339.073729
+      ],
+      "Gate": [
+        25963.9028,
+        26036.881695,
+        26267.314378,
+        26586.410453,
+        26484.299734,
+        26507.897198,
+        26418.056439,
+        26438.646628,
+        26280.266389,
+        25812.400218,
+        25842.611021
+      ],
+      "Huobi": [
+        23205.545781461908,
+        23191.24589118508,
+        23193.854247420237,
+        23181.89791320997,
+        23168.84454164386,
+        23169.81517330811,
+        23172.436555349595,
+        23173.02820572803,
+        23169.529430016366,
+        23174.27700444777,
+        23163.94807383126
+      ],
+      "Kraken": [
+        2479.6463,
+        2463.674159,
+        2474.417779,
+        2471.998527,
+        2460.555688,
+        2469.771801,
+        2482.111262,
+        2509.844415,
+        2523.95659,
+        2479.971858,
+        2479.019931
+      ],
+      "Okex": [
+        41228.85016306558,
+        41385.870247391074,
+        41833.44733247992,
+        41795.05436075757,
+        41769.52299043537,
+        41815.73358259631,
+        41828.35042357681,
+        41739.85350282579,
+        41925.69886276071,
+        41930.22776238521,
+        41917.09707298473
+      ],
+      "dYdX": [
+        829.4755,
+        832.3095,
+        843.9636,
+        862.0358,
+        866.5939,
+        866.7901,
+        868.0943,
+        870.2486,
+        870.866,
+        877.1698,
+        881.3488
+      ]
+    }
+  }
+}
+No links
+
+/api/liquidation/allExchange/intervals (VIP1)
+
+
+Liquidation
+
+
+GET
+/api/liquidation/allExchange/intervals
+Exchange Liquidation Statistics(VIP1)
+
+Returns long liquidation and short liquidation for each exchange
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+baseCoin
+string
+(query)
+coin
+
+baseCoin
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": [
+    {
+      "baseCoin": "string",
+      "totalTurnover": 0,
+      "longTurnover": 0,
+      "shortTurnover": 0,
+      "interval": "string"
+    }
+  ],
+  "ext": {
+    "total": 0,
+    "tops": [
+      {
+        "symbol": "string",
+        "posSide": "string",
+        "exchangeName": "string",
+        "tradeTurnover": 0,
+        "baseCoin": "string",
+        "ts": 0
+      }
+    ]
+  }
+}
+No links
+
+/api/longshort/realtimeAll (VIP1)
+GET
+/api/longshort/realtimeAll
+Exchange Real-time long-short ratio (VIP1)
+
+Returns the long/short ratio of aggregated taker buy/sell volumes for exchanges.
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+baseCoin
+string
+(query)
+Example : BTC
+
+BTC
+interval
+string
+(query)
+Example : 5m
+
+5m
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": [
+    {
+      "baseCoin": "string",
+      "exchangeName": "string",
+      "sellTradeTurnover": 0,
+      "buyTradeTurnover": 0
+    }
+  ]
+}
+No links
+
+/api/longshort/position (VIP1)
+GET
+/api/longshort/position
+Top Trader Long/Short Ratio(Position) (VIP1)
+
+Top Trader Long/Short Ratio(Position)
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+exchange
+string
+(query)
+Binance,OKX
+
+Example : Binance
+
+Binance
+symbol
+string
+(query)
+Example : BTCUSDT
+
+BTCUSDT
+interval
+string
+(query)
+5m 15m 30m 1h 2h 4h 6h 8h 1d
+
+Example : 1h
+
+1h
+size
+string
+(query)
+Max 500
+
+Example : 10
+
+10
+endTime
+string
+(query)
+Returns data before this timestamp
+
+Example : 1725978872354
+
+1725978872354
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{}
+No links
+
+/api/longshort/kline (VIP1)
+GET
+/api/longshort/kline
+Long short ratio k line (VIP1)
+
+Returns the ratio of long and short positions, the ratio of long and short positions of large households, and the historical K-line of the ratio of long and short accounts of large households.
+type:longShortPerson longShortPosition longShortAccount
+
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+exchange
+string
+(query)
+Binance,OKX,Huobi
+
+Example : Binance
+
+Binance
+symbol
+string
+(query)
+Example : BTCUSDT
+
+BTCUSDT
+endTime
+string
+(query)
+Returns data before this timestamp
+
+Example : 1725965847353
+
+1725965847353
+interval
+string
+(query)
+5m 15m 30m 1h 2h 4h 6h 8h 1d
+
+Example : 1h
+
+1h
+size
+string
+(query)
+Max 500
+
+Example : 10
+
+10
+type
+string
+(query)
+longShortPerson longShortPosition longShortAccount
+
+Example : longShortPerson
+
+longShortPerson
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Examples
+
+Success
+Example Value
+Schema
+{
+  "success": true,
+  "code": "1",
+  "data": [
+    {
+      "begin": 1725930000000,
+      "open": 1.6144,
+      "close": 1.5873,
+      "low": 1.5873,
+      "high": 1.6357
+    },
+    {
+      "begin": 1725933600000,
+      "open": 1.5873,
+      "close": 1.5887,
+      "low": 1.582,
+      "high": 1.5907
+    },
+    {
+      "begin": 1725937200000,
+      "open": 1.5887,
+      "close": 1.5833,
+      "low": 1.5826,
+      "high": 1.5887
+    },
+    {
+      "begin": 1725940800000,
+      "open": 1.5833,
+      "close": 1.6151,
+      "low": 1.5767,
+      "high": 1.6151
+    },
+    {
+      "begin": 1725944400000,
+      "open": 1.6151,
+      "close": 1.6846,
+      "low": 1.6151,
+      "high": 1.6911
+    },
+    {
+      "begin": 1725948000000,
+      "open": 1.6846,
+      "close": 1.6695,
+      "low": 1.6603,
+      "high": 1.6874
+    },
+    {
+      "begin": 1725951600000,
+      "open": 1.6695,
+      "close": 1.7167,
+      "low": 1.6582,
+      "high": 1.7174
+    },
+    {
+      "begin": 1725955200000,
+      "open": 1.7167,
+      "close": 1.6582,
+      "low": 1.6582,
+      "high": 1.7263
+    },
+    {
+      "begin": 1725958800000,
+      "open": 1.6582,
+      "close": 1.6853,
+      "low": 1.6323,
+      "high": 1.6882
+    },
+    {
+      "begin": 1725962400000,
+      "open": 1.6853,
+      "close": 1.6624,
+      "low": 1.661,
+      "high": 1.6853
+    }
+  ]
+}
+No links
+
+/api/indicator/getCnnEntity (VIP1)
+GET
+/api/indicator/getCnnEntity
+Fear & Greed (VIP1)
+
+Fear & Greed
+
+Parameters
+Try it out
+Name	Description
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": {
+    "timeList": [
+      0
+    ],
+    "cnnValueList": [
+      0
+    ],
+    "priceList": [
+      0,
+      0
+    ]
+  }
+}
+No links
+
+/api/indicator/getBtcMultiplier (VIP1)
+
+Indicator Data
+
+
+GET
+/api/indicator/getBtcMultiplier
+2-Year MA Multiplier(VIP1)
+
+2-Year MA Multiplier
+
+Parameters
+Try it out
+Name	Description
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": {
+    "timeList": [
+      0
+    ],
+    "mA730Mu5List": [
+      0
+    ],
+    "mA730List": [
+      0
+    ],
+    "priceList": [
+      0,
+      0
+    ]
+  }
+}
+No links
+
+/api/indicator/getPuellMultiple (VIP1)
+GET
+/api/indicator/getPuellMultiple
+The Puell Multiple(VIP1)
+
+Parameters
+Try it out
+Name	Description
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": {
+    "timeList": [
+      0
+    ],
+    "puellMultiplList": [
+      0,
+      0
+    ],
+    "priceList": [
+      0,
+      0
+    ]
+  }
+}
+No links
+
+/api/indicator/getMovingAvgHeatmap (VIP1)
+GET
+/api/indicator/getMovingAvgHeatmap
+200 Week Moving Average Heatmap(VIP1)
+
+Parameters
+Try it out
+Name	Description
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": {
+    "ma1440IpList": [
+      0,
+      "Unknown Type: null",
+      0
+    ],
+    "timeList": [
+      0
+    ],
+    "ma1440List": [
+      0
+    ],
+    "priceList": [
+      0,
+      0
+    ]
+  }
+}
+No links
+
+/api/marketOrder/getBuySellVolume (VIP3)
+GET
+/api/marketOrder/getBuySellVolume
+Taker Buy/Sell Volume （(VIP3)
+
+Returns the active buying and selling volume of market orders within the time level # Required API Level: VIP3 and Above
+
+Parameters
+Try it out
+Name	Description
+exchange
+string
+(query)
+Binance OKX Bybit Bitget
+
+Example : Binance
+
+Binance
+symbol
+string
+(query)
+Example : BTCUSDT
+
+BTCUSDT
+interval
+string
+(query)
+1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 1d
+
+Example : 1h
+
+1h
+endTime
+string
+(query)
+Returns data before this timestamp
+
+Example : 1725972522356
+
+1725972522356
+size
+integer
+(query)
+max 500
+
+Example : 10
+
+10
+productType
+string
+(query)
+SWAP SPOT
+
+Example : SWAP
+
+SWAP
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Examples
+
+Success
+Example Value
+Schema
+{
+  "success": true,
+  "code": "1",
+  "data": {
+    "success": true,
+    "code": "1",
+    "data": [
+      [
+        1725937200000,
+        12.07,
+        -634.53,
+        -634.53
+      ],
+      [
+        1725940800000,
+        507.17,
+        0,
+        429.79
+      ],
+      [
+        1725944400000,
+        935.97,
+        0,
+        730.5
+      ],
+      [
+        1725948000000,
+        0,
+        -360.14,
+        -263.06
+      ],
+      [
+        1725951600000,
+        856.85,
+        -10.83,
+        856.85
+      ],
+      [
+        1725955200000,
+        580.23,
+        -813.21,
+        -813.21
+      ],
+      [
+        1725958800000,
+        521.13,
+        -59.72,
+        521.13
+      ],
+      [
+        1725962400000,
+        99.94,
+        -306.19,
+        -151.71
+      ],
+      [
+        1725966000000,
+        173.87,
+        -462.83,
+        -462.83
+      ],
+      [
+        1725969600000,
+        134.88,
+        -241.14,
+        -11.03
+      ]
+    ]
+  }
+}
+No links
+
+/api/marketOrder/getAggBuySellVolume (VIP3)
+GET
+/api/marketOrder/getAggBuySellVolume
+Aggregate Taker Buy/Sell Volume (VIP3)
+
+Returns the active buying and selling volume of market orders within the time level # Required API Level: VIP3 and Above
+
+Parameters
+Try it out
+Name	Description
+exchanges
+string
+(query)
+Binance,OKX,Bybit,Bitget,Huobi Use commas to connect multiple exchanges
+
+Example : Binance
+
+Binance
+baseCoin
+string
+(query)
+Example : BTC
+
+BTC
+interval
+string
+(query)
+1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 1d
+
+Example : 1h
+
+1h
+endTime
+string
+(query)
+Returns data before this timestamp
+
+Example : 1725972522356
+
+1725972522356
+size
+integer
+(query)
+max 500
+
+Example : 10
+
+10
+productType
+string
+(query)
+SWAP SPOT
+
+Example : SWAP
+
+SWAP
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Examples
+
+Success
+Example Value
+Schema
+{
+  "success": true,
+  "code": "1",
+  "data": {
+    "success": true,
+    "code": "1",
+    "data": [
+      [
+        1725937200000,
+        12.07,
+        -634.53,
+        -634.53
+      ],
+      [
+        1725940800000,
+        507.17,
+        0,
+        429.79
+      ],
+      [
+        1725944400000,
+        935.97,
+        0,
+        730.5
+      ],
+      [
+        1725948000000,
+        0,
+        -360.14,
+        -263.06
+      ],
+      [
+        1725951600000,
+        856.85,
+        -10.83,
+        856.85
+      ],
+      [
+        1725955200000,
+        580.23,
+        -813.21,
+        -813.21
+      ],
+      [
+        1725958800000,
+        521.13,
+        -59.72,
+        521.13
+      ],
+      [
+        1725962400000,
+        99.94,
+        -306.19,
+        -151.71
+      ],
+      [
+        1725966000000,
+        173.87,
+        -462.83,
+        -462.83
+      ],
+      [
+        1725969600000,
+        134.88,
+        -241.14,
+        -11.03
+      ]
+    ]
+  }
+}
+No links
+
+/api/fundingRate/hist (VIP1)
+
+
+FundingRate
+
+
+GET
+/api/fundingRate/hist
+Historical Settlement Funding Rate (VIP1)
+
+Returns the historical settlement funding rate, supporting U-based contracts and currency-based contracts.
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+baseCoin
+string
+(query)
+coin name
+
+Example : BTC
+
+BTC
+exchangeType
+string
+(query)
+USDT or COIN
+
+Example : USDT
+
+USDT
+endTime
+string
+(query)
+Returns data before this timestamp
+
+Example : 1725972522356
+
+1725972522356
+size
+string
+(query)
+Max 500
+
+Example : 20
+
+20
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Examples
+
+Success
+Example Value
+Schema
+{
+  "success": true,
+  "code": "1",
+  "data": [
+    {
+      "ts": 1725955200000,
+      "details": {
+        "Huobi": {
+          "fundingRate": -0.000020011867096626,
+          "realizedRate": -0.000020011867096626
+        },
+        "Bitget": {
+          "fundingRate": -0.000035
+        },
+        "Binance": {
+          "fundingRate": -0.0000293
+        },
+        "dYdX": {
+          "fundingRate": -0.0000089119
+        },
+        "Okex": {
+          "fundingRate": 0.0000489371426509,
+          "realizedRate": 0.0000489371426509
+        },
+        "Gate": {
+          "fundingRate": -0.000028
+        },
+        "Bybit": {
+          "fundingRate": 0.00001276
+        }
+      }
+    },
+    {
+      "ts": 1725926400000,
+      "details": {
+        "Huobi": {
+          "fundingRate": -0.000108658781197818,
+          "realizedRate": -0.000108658781197818
+        },
+        "Bitget": {
+          "fundingRate": -0.000081
+        },
+        "Binance": {
+          "fundingRate": -0.00006028
+        },
+        "dYdX": {
+          "fundingRate": -0.0000047719
+        },
+        "Okex": {
+          "fundingRate": -0.0000187673667331,
+          "realizedRate": -0.0000187673667331
+        },
+        "Gate": {
+          "fundingRate": -0.000214
+        },
+        "Bybit": {
+          "fundingRate": 0.0001
+        }
+      }
+    },
+    {
+      "ts": 1725897600000,
+      "details": {
+        "Huobi": {
+          "fundingRate": -0.00012282439531243,
+          "realizedRate": -0.00012282439531243
+        },
+        "Bitget": {
+          "fundingRate": -0.000042
+        },
+        "Binance": {
+          "fundingRate": -0.00003875
+        },
+        "dYdX": {
+          "fundingRate": -0.000007026
+        },
+        "Okex": {
+          "fundingRate": -0.0000510268687967,
+          "realizedRate": -0.0000510268687967
+        },
+        "Gate": {
+          "fundingRate": -0.000185
+        },
+        "Bybit": {
+          "fundingRate": -0.0000354
+        }
+      }
+    },
+    {
+      "ts": 1725868800000,
+      "details": {
+        "Huobi": {
+          "fundingRate": -0.000021864540694889,
+          "realizedRate": -0.000021864540694889
+        },
+        "Bitget": {
+          "fundingRate": -0.000085
+        },
+        "Binance": {
+          "fundingRate": -0.00007108
+        },
+        "dYdX": {
+          "fundingRate": -0.0000039716
+        },
+        "Okex": {
+          "fundingRate": -0.0000365987156893,
+          "realizedRate": -0.0000365987156893
+        },
+        "Gate": {
+          "fundingRate": -0.000125
+        },
+        "Bybit": {
+          "fundingRate": 0.00009123
+        }
+      }
+    },
+    {
+      "ts": 1725840000000,
+      "details": {
+        "Huobi": {
+          "fundingRate": -0.00005188994795854,
+          "realizedRate": -0.00005188994795854
+        },
+        "Bitget": {
+          "fundingRate": -0.000097
+        },
+        "Binance": {
+          "fundingRate": -0.00007585
+        },
+        "dYdX": {
+          "fundingRate": -0.0000034578
+        },
+        "Okex": {
+          "fundingRate": -0.0000125359285241,
+          "realizedRate": -0.0000125359285241
+        },
+        "Gate": {
+          "fundingRate": -0.000071
+        },
+        "Bybit": {
+          "fundingRate": 0.00009883
+        }
+      }
+    },
+    {
+      "ts": 1725811200000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.000060565659231311,
+          "realizedRate": 0.000060565659231311
+        },
+        "Bitget": {
+          "fundingRate": -0.000066
+        },
+        "Binance": {
+          "fundingRate": -0.00005245
+        },
+        "dYdX": {
+          "fundingRate": -0.0000167165
+        },
+        "Okex": {
+          "fundingRate": 0.00001432521242,
+          "realizedRate": 0.00001432521242
+        },
+        "Gate": {
+          "fundingRate": -0.000075
+        },
+        "Bybit": {
+          "fundingRate": 0.00003261
+        }
+      }
+    },
+    {
+      "ts": 1725782400000,
+      "details": {
+        "Huobi": {
+          "fundingRate": -0.000005454672466033,
+          "realizedRate": -0.000005454672466033
+        },
+        "Bitget": {
+          "fundingRate": -0.000073
+        },
+        "Binance": {
+          "fundingRate": -0.00005999
+        },
+        "dYdX": {
+          "fundingRate": -0.0000262652
+        },
+        "Okex": {
+          "fundingRate": -0.0000025140654562,
+          "realizedRate": -0.0000025140654562
+        },
+        "Gate": {
+          "fundingRate": 0.000004
+        },
+        "Bybit": {
+          "fundingRate": 0.00001751
+        }
+      }
+    },
+    {
+      "ts": 1725753600000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": 0.000047
+        },
+        "Binance": {
+          "fundingRate": 0.00003745
+        },
+        "dYdX": {
+          "fundingRate": -0.0000224898
+        },
+        "Okex": {
+          "fundingRate": 0.0000271600206979,
+          "realizedRate": 0.0000271600206979
+        },
+        "Gate": {
+          "fundingRate": -0.000041
+        },
+        "Bybit": {
+          "fundingRate": 0.0000468
+        }
+      }
+    },
+    {
+      "ts": 1725724800000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.000002319397778285,
+          "realizedRate": 0.000002319397778285
+        },
+        "Bitget": {
+          "fundingRate": -0.000079
+        },
+        "Binance": {
+          "fundingRate": -0.00007236
+        },
+        "dYdX": {
+          "fundingRate": -0.0000166465
+        },
+        "Okex": {
+          "fundingRate": -0.0000783557296885,
+          "realizedRate": -0.0000783557296885
+        },
+        "Gate": {
+          "fundingRate": -0.000131
+        },
+        "Bybit": {
+          "fundingRate": 0.00003364
+        }
+      }
+    },
+    {
+      "ts": 1725696000000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": -0.00009
+        },
+        "Binance": {
+          "fundingRate": -0.00007634
+        },
+        "dYdX": {
+          "fundingRate": -0.0000026075
+        },
+        "Okex": {
+          "fundingRate": -0.0000823980825188,
+          "realizedRate": -0.0000823980825188
+        },
+        "Gate": {
+          "fundingRate": -0.000055
+        },
+        "Bybit": {
+          "fundingRate": 0.0000243
+        }
+      }
+    },
+    {
+      "ts": 1725667200000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": -0.000006
+        },
+        "Binance": {
+          "fundingRate": -0.00000557
+        },
+        "dYdX": {
+          "fundingRate": -0.0000062272
+        },
+        "Okex": {
+          "fundingRate": -0.0000897186034696,
+          "realizedRate": -0.0000897186034696
+        },
+        "Gate": {
+          "fundingRate": -0.000015
+        },
+        "Bybit": {
+          "fundingRate": 0.00002842
+        }
+      }
+    },
+    {
+      "ts": 1725638400000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": 0.000019
+        },
+        "Binance": {
+          "fundingRate": 0.00001428
+        },
+        "dYdX": {
+          "fundingRate": -0.0000025198
+        },
+        "Okex": {
+          "fundingRate": 0.0000163579425724,
+          "realizedRate": 0.0000163579425724
+        },
+        "Gate": {
+          "fundingRate": -0.000025
+        },
+        "Bybit": {
+          "fundingRate": 0.00000186
+        }
+      }
+    },
+    {
+      "ts": 1725609600000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": 0.000003
+        },
+        "Binance": {
+          "fundingRate": -1e-8
+        },
+        "dYdX": {
+          "fundingRate": -0.0000074243
+        },
+        "Okex": {
+          "fundingRate": 0.0000424731822967,
+          "realizedRate": 0.0000424731822967
+        },
+        "Gate": {
+          "fundingRate": -0.000017
+        },
+        "Bybit": {
+          "fundingRate": -0.0000166
+        }
+      }
+    },
+    {
+      "ts": 1725580800000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": 0.000033
+        },
+        "Binance": {
+          "fundingRate": 0.0000228
+        },
+        "dYdX": {
+          "fundingRate": -0.0000019736
+        },
+        "Okex": {
+          "fundingRate": 0.0000588361253654,
+          "realizedRate": 0.0000588361253654
+        },
+        "Gate": {
+          "fundingRate": 0.000053
+        },
+        "Bybit": {
+          "fundingRate": -0.00004633
+        }
+      }
+    },
+    {
+      "ts": 1725552000000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": 0.000031
+        },
+        "Binance": {
+          "fundingRate": 0.0000249
+        },
+        "dYdX": {
+          "fundingRate": -0.0000185622
+        },
+        "Okex": {
+          "fundingRate": 0.0000156521410042,
+          "realizedRate": 0.0000156521410042
+        },
+        "Gate": {
+          "fundingRate": 0.0001
+        },
+        "Bybit": {
+          "fundingRate": 0.00000848
+        }
+      }
+    },
+    {
+      "ts": 1725523200000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": 0.000018
+        },
+        "Binance": {
+          "fundingRate": 0.00002025
+        },
+        "dYdX": {
+          "fundingRate": -0.0000121113
+        },
+        "Okex": {
+          "fundingRate": 0.0000237244771928,
+          "realizedRate": 0.0000237244771928
+        },
+        "Gate": {
+          "fundingRate": 0.0001
+        },
+        "Bybit": {
+          "fundingRate": -0.00000239
+        }
+      }
+    },
+    {
+      "ts": 1725494400000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": 0.000107
+        },
+        "Binance": {
+          "fundingRate": 0.00009016
+        },
+        "dYdX": {
+          "fundingRate": -0.0000133991
+        },
+        "Okex": {
+          "fundingRate": 0.0000302405254579,
+          "realizedRate": 0.0000302405254579
+        },
+        "Gate": {
+          "fundingRate": -0.000127
+        },
+        "Bybit": {
+          "fundingRate": -0.00004165
+        }
+      }
+    },
+    {
+      "ts": 1725465600000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": -0.000012
+        },
+        "Binance": {
+          "fundingRate": -0.0000147
+        },
+        "dYdX": {
+          "fundingRate": -0.0000221433
+        },
+        "Okex": {
+          "fundingRate": -0.0000529015323895,
+          "realizedRate": -0.0000529015323895
+        },
+        "Gate": {
+          "fundingRate": 0.000004
+        },
+        "Bybit": {
+          "fundingRate": -0.00002771
+        }
+      }
+    },
+    {
+      "ts": 1725436800000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": 0.000014
+        },
+        "Binance": {
+          "fundingRate": 0.0000105
+        },
+        "dYdX": {
+          "fundingRate": -0.0000165698
+        },
+        "Okex": {
+          "fundingRate": -0.0000157991723037,
+          "realizedRate": -0.0000157991723037
+        },
+        "Gate": {
+          "fundingRate": 0.000025
+        },
+        "Bybit": {
+          "fundingRate": 0.00000358
+        }
+      }
+    },
+    {
+      "ts": 1725408000000,
+      "details": {
+        "Huobi": {
+          "fundingRate": 0.0001,
+          "realizedRate": 0.0001
+        },
+        "Bitget": {
+          "fundingRate": 0.00002
+        },
+        "Binance": {
+          "fundingRate": 0.00002209
+        },
+        "dYdX": {
+          "fundingRate": -0.0000081045
+        },
+        "Okex": {
+          "fundingRate": 0.0000566326862708,
+          "realizedRate": 0.0000566326862708
+        },
+        "Gate": {
+          "fundingRate": 0.000018
+        },
+        "Bybit": {
+          "fundingRate": 0.00004569
+        }
+      }
+    }
+  ],
+  "ext": {
+    "columns": [
+      "Binance",
+      "Okex",
+      "Bybit",
+      "Gate",
+      "Bitget",
+      "dYdX",
+      "Huobi"
+    ]
+  }
+}
+No links
+
+/api/liquidation/history (VIP1)
+GET
+/api/liquidation/history
+Trading Pair Liquidation Statistics(VIP1)
+
+Returns the long liquidation and short liquidation for each trading pair
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+exchange *
+string
+(query)
+Binance,OKX,Bybit,Gate,Huobi,Bitfinex,Kraken,Deribit,Bitmex
+
+Example : Binance
+
+Binance
+symbol *
+string
+(query)
+Example : BTCUSDT
+
+BTCUSDT
+interval *
+string
+(query)
+1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d
+
+Example : 1h
+
+1h
+endTime
+number
+(query)
+Returns data before this timestamp
+
+Example : 1725972522356
+
+1725972522356
+size
+integer
+(query)
+Max:500
+
+Example : 10
+
+10
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Examples
+
+Success
+Example Value
+Schema
+{
+  "success": true,
+  "code": "1",
+  "data": [
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725937200000,
+      "longTurnover": 123431.9085,
+      "shortTurnover": 0
+    },
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725940800000,
+      "longTurnover": 310609.81415,
+      "shortTurnover": 5497.6822
+    },
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725944400000,
+      "longTurnover": 1250.3844,
+      "shortTurnover": 287941.44256
+    },
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725948000000,
+      "longTurnover": 0,
+      "shortTurnover": 965.93218
+    },
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725951600000,
+      "longTurnover": 3406.65,
+      "shortTurnover": 272832.81416
+    },
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725955200000,
+      "longTurnover": 79017.4438,
+      "shortTurnover": 17593.1393
+    },
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725958800000,
+      "longTurnover": 89422.9012,
+      "shortTurnover": 34312.2797
+    },
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725962400000,
+      "longTurnover": 50963.8532,
+      "shortTurnover": 50844.8098
+    },
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725966000000,
+      "longTurnover": 969.8266,
+      "shortTurnover": 85064.11506
+    },
+    {
+      "symbol": "BTCUSDT",
+      "exchangeName": "Binance",
+      "ts": 1725969600000,
+      "longTurnover": 67206.8307,
+      "shortTurnover": 234223.3304
+    }
+  ]
+}
+No links
+
+/api/indicator/index/charts (VIP1)
+GET
+/api/indicator/index/charts
+Special Indicator Data(VIP1)
+
+Special Indicator Data
+Bitcoin Rainbow Price Chart IndicatorV2：bitcoin-rainbow-v2
+1Y+ HODL：/charts/1-year-hodl-wave/
+HODL Waves：/charts/hodl-waves/
+MVRV Z-Score ：/charts/mvrv-zscore/
+Net Unrealized Profit/Loss (NUPL)：/charts/relative-unrealized-prof/
+BTC Price Prediction：/charts/bitcoin-price-prediction/
+Reserve Risk：/charts/reserve-risk/
+RHODL Ratio：/charts/rhodl-ratio/
+Whale Shadows：/charts/whale-shadows/
+Parameters
+Try it out
+Name	Description
+type *
+string
+(query)
+Example : bitcoin-rainbow-v2
+
+bitcoin-rainbow-v2
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": {
+    "btcPrice": [
+      0,
+      0,
+      "Unknown Type: null"
+    ],
+    "timeList": [
+      0
+    ],
+    "value1": [
+      0,
+      0
+    ],
+    "value2": [
+      0,
+      0
+    ],
+    "value3": [
+      0
+    ],
+    "value4": [
+      0,
+      0
+    ],
+    "value5": [
+      0,
+      0
+    ],
+    "value6": [
+      0
+    ],
+    "value7": [
+      0,
+      0
+    ],
+    "value8": [
+      0,
+      0
+    ],
+    "value9": [
+      0
+    ],
+    "value10": [
+      0,
+      0
+    ]
+  }
+}
+No links
+x-200:/charts/1-year-hodl-wave/	
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": {
+    "timeList": [
+      0
+    ],
+    "btcPrice": [
+      0,
+      0
+    ],
+    "value1": [
+      "Unknown Type: null"
+    ]
+  }
+}
+No links
+x-200:/charts/hodl-waves/	
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": {
+    "timeList": [
+      0
+    ],
+    "btcPrice": [
+      0,
+      0
+    ],
+    "value1": [
+      0
+    ],
+    "value2": [
+      0
+    ],
+    "value3": [
+      0
+    ],
+    "value4": [
+      0
+    ],
+    "value5": [
+      0
+    ],
+    "value6": [
+      0
+    ],
+    "value7": [
+      0
+    ],
+    "value8": [
+      0,
+      0
+    ],
+    "value9": [
+      0,
+      0
+    ],
+    "value10": [
+      0,
+      0
+    ],
+    "value11": [
+      0,
+      0
+    ],
+    "value12": [
+      0,
+      0
+    ]
+  }
+}
+No links
+x-200:/charts/mvrv-zscore/	
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "success": true,
+  "code": "string",
+  "data": {
+    "timeList": [
+      0
+    ],
+    "value1": [
+      0
+    ],
+    "value2": [
+      0,
+      0
+    ],
+    "value3": [
+      0
+    ],
+    "value4": [
+      "Unknown Type: null",
+      0
+    ],
+    "btcPrice": [
+      "Unknown Type: null"
+    ]
+  }
+}
+No links
+x-200:/charts/relative-unrealized-prof/	
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "code": 0,
+  "success": true,
+  "data": {
+    "timeList": [
+      0
+    ],
+    "btcPrice": [
+      0
+    ],
+    "value1": [
+      0
+    ]
+  }
+}
+No links
+x-200:/charts/bitcoin-price-prediction/	
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "code": 0,
+  "success": true,
+  "data": {
+    "timeList": [
+      0
+    ],
+    "btcPrice": [
+      0
+    ],
+    "value1": [
+      0
+    ],
+    "value2": [
+      0
+    ],
+    "value3": [
+      0
+    ],
+    "value4": [
+      0
+    ],
+    "value5": [
+      0
+    ]
+  }
+}
+No links
+x-200:/charts/reserve-risk/	
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "code": 0,
+  "success": true,
+  "data": {
+    "timeList": [
+      0
+    ],
+    "btcPrice": [
+      0
+    ],
+    "value1": [
+      0
+    ],
+    "value2": [
+      0
+    ],
+    "value3": [
+      0
+    ],
+    "value4": [
+      0
+    ]
+  }
+}
+No links
+x-200:/charts/rhodl-ratio/	
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "code": "string",
+  "success": true,
+  "data": {
+    "timeList": [
+      0
+    ],
+    "btcPrice": [
+      0
+    ],
+    "value1": [
+      0
+    ]
+  }
+}
+No links
+x-200:/charts/whale-shadows/	
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "code": "string",
+  "success": true,
+  "data": {
+    "timeList": [
+      0
+    ],
+    "btcPrice": [
+      0
+    ],
+    "value1": [
+      0
+    ],
+    "value2": [
+      0
+    ],
+    "value3": [
+      0
+    ],
+    "value4": [
+      0
+    ]
+  }
+}
+No links
+
+
+/api/openInterest/kline (VIP1)
+GET
+/api/openInterest/kline
+Trading Pair Open Interest K Line(VIP1)
+
+Trading Pair Open Interest K Line
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+exchange *
+string
+(query)
+Binance OKX Bybit Bitget Huobi Gate
+
+Example : Binance
+
+Binance
+symbol *
+string
+(query)
+Example : BTCUSDT
+
+BTCUSDT
+interval *
+string
+(query)
+1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d
+
+Example : 1h
+
+1h
+endTime *
+number
+(query)
+Returns data before this timestamp
+
+Example : 1725983462353
+
+1725983462353
+size
+integer
+(query)
+Max 500
+
+Example : 10
+
+10
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Examples
+
+Success
+Example Value
+Schema
+{
+  "success": true,
+  "code": "1",
+  "data": [
+    {
+      "id": "66dfe072b1dc79a6978962fe",
+      "begin": 1725948000000,
+      "open": 86935,
+      "close": 86918,
+      "low": 86854,
+      "high": 86942
+    },
+    {
+      "id": "66dfee81b1dc79a697dd3d06",
+      "begin": 1725951600000,
+      "open": 86918,
+      "close": 87217,
+      "low": 86809,
+      "high": 87224
+    },
+    {
+      "id": "66dffc93b1dc79a69731643b",
+      "begin": 1725955200000,
+      "open": 87217,
+      "close": 87343,
+      "low": 87217,
+      "high": 87655
+    },
+    {
+      "id": "66e00aa3b1dc79a697855e07",
+      "begin": 1725958800000,
+      "open": 87343,
+      "close": 87452,
+      "low": 87133,
+      "high": 87452
+    },
+    {
+      "id": "66e018b2b1dc79a697d97aa1",
+      "begin": 1725962400000,
+      "open": 87452,
+      "close": 87157,
+      "low": 87139,
+      "high": 87485
+    },
+    {
+      "id": "66e026c1b1dc79a6972d387d",
+      "begin": 1725966000000,
+      "open": 87157,
+      "close": 86948,
+      "low": 86948,
+      "high": 87193
+    },
+    {
+      "id": "66e034d5b1dc79a6977e8d3f",
+      "begin": 1725969600000,
+      "open": 86948,
+      "close": 86945,
+      "low": 86790,
+      "high": 86972
+    },
+    {
+      "id": "66e042e1b1dc79a697d14e93",
+      "begin": 1725973200000,
+      "open": 86945,
+      "close": 87524,
+      "low": 86923,
+      "high": 87809
+    },
+    {
+      "id": "66e050f9b1dc79a6972247b8",
+      "begin": 1725976800000,
+      "open": 87524,
+      "close": 86977,
+      "low": 86977,
+      "high": 87597
+    },
+    {
+      "id": "66e05f02b1dc79a69776cd21",
+      "begin": 1725980400000,
+      "open": 86977,
+      "close": 87165,
+      "low": 86832,
+      "high": 87185
+    }
+  ]
+}
+No links
+
+/api/fundingRate/accumulated (VIP1)
+GET
+/api/fundingRate/accumulated
+Accumulated FundingRate(VIP1)
+
+Returns the cumulative funding rate, which has four levels: day, week, month, and year.
+# Required API Level: VIP1 and Above
+
+Parameters
+Try it out
+Name	Description
+type
+string
+(query)
+day,week,month,year
+
+Example : day
+
+day
+apikey *
+string
+(header)
+Register and activate to obtain apikey
+
+Example :
+
+apikey
+Responses
+Code	Description	Links
+200	
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{}
+No links
+

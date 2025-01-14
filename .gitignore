@@ -1,0 +1,51 @@
+# Конфиденциальные данные
+config.py
+.env
+
+# Кэш
+cache/
+__pycache__/
+*.pyc
+
+# Логи
+logs/
+*.log
+
+# Среда разработки
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Виртуальное окружение
+venv/
+ENV/
+env/
+
+*~
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb

@@ -1,114 +1,129 @@
-# Прогнозирование цены Bitcoin с использованием LSTM
+# Bitcoin Price Predictor
 
-Проект по предсказанию цены Bitcoin с использованием нейронной сети LSTM, технических индикаторов и индекса страха и жадности.
+Комплексная система для предсказания цены Bitcoin, использующая данные из различных источников, включая блокчейн-метрики, рыночные показатели, социальные настроения и макроэкономические индикаторы.
 
-## Особенности
+## Основные возможности
 
-- Использование LSTM (Long Short-Term Memory) для прогнозирования
-- Расширенный набор технических индикаторов:
-  - RSI (Relative Strength Index)
-  - MACD (Moving Average Convergence Divergence)
-  - OBV (On-Balance Volume)
-- Учет индекса страха и жадности (Fear and Greed Index)
-- Улучшенная нормализация данных для точных предсказаний
-- Визуализация результатов прогнозирования с сохранением графиков
-- Автоматическое сохранение обученной модели
-- Проверка размерности входных данных для надежности предсказаний
+### 1. Сбор данных
+- **Blockchain.com**: Метрики блокчейна, рыночные данные
+- **Yahoo Finance**: Корреляции с традиционным рынком
+- **LunarCrush**: Социальные метрики и настроения
+- **Fear & Greed Index**: Индикатор рыночных настроений
+- **FRED API**: Макроэкономические показатели (инфляция, ставки, ВВП и др.)
+- **CoinArk API**: Данные о деривативах и фьючерсах (открытый интерес, ликвидации)
 
-## Требования
+### 2. Анализ данных
+- Технические индикаторы
+- Метрики блокчейна
+- Социальные настроения
+- Корреляции с традиционными активами
+- Макроэкономические индикаторы
 
-```
-numpy==1.24.3
-pandas==2.1.0
-yfinance
-scikit-learn==1.3.0
-tensorflow==2.13.0
-matplotlib==3.7.2
-requests
-keras==2.13.1
-```
+### 3. Предсказание
+- Краткосрочные прогнозы (1-7 дней)
+- Среднесрочные прогнозы (7-30 дней)
+- Анализ тренда
 
 ## Установка
 
-1. Клонируйте репозиторий
+### Требования
+- Python 3.8+
+- pip
+
+### Зависимости
+```
+numpy==1.24.3
+pandas==2.0.3
+scikit-learn>=0.24.0
+tensorflow>=2.4.0
+yfinance>=0.1.63
+requests>=2.25.1
+pytz>=2021.1
+python-dateutil>=2.8.1
+ta>=0.7.0
+keras>=2.13.1
+```
+
+### Шаги установки
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/yourusername/Bitcoin-Price-Prediction.git
+cd Bitcoin-Price-Prediction
+```
+
 2. Установите зависимости:
 ```bash
 pip install -r requirements.txt
 ```
 
+3. Настройте конфигурацию:
+   - Скопируйте `config.example.py` в `config.py`
+   - Добавьте необходимые API ключи:
+     - Blockchain.com API
+     - LunarCrush API
+     - FRED API
+     - CoinArk API
+
 ## Использование
 
-Запустите скрипт:
-```bash
-python bitcoin_prediction.py
+### Сбор данных
+
+```python
+from extended_version.historical_data_collector import HistoricalDataCollector
+
+# Инициализация коллектора
+collector = HistoricalDataCollector()
+
+# Сбор всех данных
+collector.update_all_data()
 ```
 
-Скрипт выполнит следующие действия:
-1. Загрузит исторические данные о цене Bitcoin
-2. Получит данные индекса страха и жадности
-3. Рассчитает технические индикаторы
-4. Обучит LSTM модель
-5. Создаст и сохранит графики:
-   - `prediction_results.png` - график реальных данных и предсказаний
-   - `training_history.png` - график процесса обучения
-6. Сохранит обученную модель в директории `model`
-7. Сделает прогноз цены на следующие 7 дней
+### Структура проекта
+```
+project/
+├── extended_version/          # Сборщики данных
+│   ├── blockchain_data_collector.py
+│   ├── yahoo_finance_collector.py
+│   ├── lunarcrush_collector.py
+│   ├── sentiment_data_collector.py
+│   ├── fred_data_collector.py
+│   ├── coinark_collector.py
+│   └── historical_data_collector.py
+├── model/                     # Модели и препроцессинг
+│   ├── models/
+│   └── preprocessing/
+├── data/                      # Собранные данные
+│   ├── blockchain/
+│   ├── market_data/
+│   ├── lunarcrush/
+│   ├── sentiment/
+│   ├── fred/
+│   └── coinark/
+└── config/                    # Конфигурация
+    └── config.py
+```
 
-## Структура проекта
+## Документация
+- [Архитектура](ARCHITECTURE.md)
+- [История изменений](CHANGELOG.md)
 
-- `bitcoin_prediction.py` - основной скрипт с реализацией модели
-- `requirements.txt` - файл зависимостей
-- `model/` - директория для сохранения обученной модели
-- `prediction_results.png` - график результатов предсказания
-- `training_history.png` - график процесса обучения
-- `README.md` - документация проекта
-- `CHANGELOG.md` - история изменений
+## Безопасность
+- API ключи хранятся в отдельном конфиг-файле
+- Валидация входных данных
+- Обработка ошибок API
 
-## Результаты
+## Разработка
 
-Модель учитывает следующие параметры:
-- Цена закрытия Bitcoin
-- Объем торгов
-- Индекс страха и жадности
-- Технические индикаторы (RSI, MACD, OBV)
+### Тестирование
+```bash
+python -m pytest tests/
+```
 
-Результаты визуализируются в двух графиках:
-1. График предсказаний (`prediction_results.png`):
-   - Реальные данные
-   - Предсказания на обучающей выборке
-   - Предсказания на тестовой выборке
-   - Прогноз на следующие 7 дней
-
-2. График обучения (`training_history.png`):
-   - Ошибка на обучающей выборке
-   - Ошибка на проверочной выборке
-
-## Точность модели
-
-- Модель использует расширенный набор технических индикаторов для улучшения точности предсказаний
-- Проверка размерности входных данных обеспечивает надежность предсказаний
-- Улучшенная нормализация данных помогает модели лучше обрабатывать различные масштабы признаков
+### Форматирование кода
+```bash
+black .
+```
 
 ## Лицензия
-
 MIT License
-
-Copyright (c) 2020 Siddhant Golangade
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.

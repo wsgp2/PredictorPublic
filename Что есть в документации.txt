@@ -1,0 +1,385 @@
+CoinAnk-api
+ 1.0.0 
+OAS 3.0
+Servers
+
+https://open-api.coinank.com - Prod Env
+Authorize
+Error Code
+
+
+GET
+/
+errcode
+
+WebHook
+
+
+POST
+/api/webhook/push
+WebHook APP PUSH(VIP1)
+
+Coin & Symbol
+
+
+GET
+/api/baseCoin/list
+Supported Coins(VIP1)
+
+
+GET
+/api/baseCoin/symbols
+Supported Trading Pairs(VIP1)
+
+
+GET
+/api/instruments/getLastPrice
+Last Price(VIP1)
+
+
+GET
+/api/instruments/getCoinMarketCap
+Coin MarketCap(VIP1)
+
+Open Interest
+
+
+GET
+/api/openInterest/all
+Exchange List(VIP1)
+
+
+GET
+/api/openInterest/v2/chart
+Exchange History Chart(VIP1)
+
+
+GET
+/api/openInterest/symbol/Chart
+Trading Pair Open Interest(VIP1)
+
+
+GET
+/api/openInterest/kline
+Trading Pair Open Interest K Line(VIP1)
+
+
+GET
+/api/openInterest/aggKline
+Aggregation Open Interest K Line(VIP1)
+
+
+GET
+/api/tickers/topOIByEx
+Real-Time Open Interest(VIP1)
+
+Liquidation
+
+
+GET
+/api/liquidation/allExchange/intervals
+Exchange Liquidation Statistics(VIP1)
+
+
+GET
+/api/liquidation/aggregated-history
+Aggregation Liquidation Statistics(VIP1)
+
+
+GET
+/api/liquidation/history
+Trading Pair Liquidation Statistics(VIP1)
+
+
+GET
+/api/liquidation/orders
+Liquidation order(VIP3)
+
+
+GET
+/api/liqMap/getLiqMap
+Liquidation Map ((VIP4)
+
+
+GET
+/api/liqMap/getAggLiqMap
+Aggregation Liquidation Map (VIP4)
+
+
+GET
+/api/liqMap/getLiqHeatMap
+Liquidation Heatmap (VIP4)
+
+
+GET
+/api/liqMap/getLiqHeatMapSymbol
+Liquidation Heatmap Symbol (VIP1)
+
+Market Order Statistics
+
+
+GET
+/api/cvd/getCvdKline
+Market Order Statistical Indicators (VIP3)
+
+
+GET
+/api/marketOrder/getCvd
+CVD Data （(VIP3)
+
+
+GET
+/api/marketOrder/getAggCvd
+Aggregate CVD Data （(VIP3)
+
+
+GET
+/api/marketOrder/getBuySellCount
+Taker Buy/Sell Count （(VIP3)
+
+
+GET
+/api/marketOrder/getAggBuySellCount
+Aggregate Taker Buy/Sell Count (VIP3)
+
+
+GET
+/api/marketOrder/getBuySellValue
+Taker Buy/Sell Value (VIP3)
+
+
+GET
+/api/marketOrder/getAggBuySellValue
+Aggregate Taker Buy/Sell Value (VIP3)
+
+
+GET
+/api/marketOrder/getBuySellVolume
+Taker Buy/Sell Volume （(VIP3)
+
+
+GET
+/api/marketOrder/getAggBuySellVolume
+Aggregate Taker Buy/Sell Volume (VIP3)
+
+
+GET
+/api/cvd/getAggCvdKline
+Aggregate Market Order Statistical Indicators (VIP3)
+
+Fundflow
+
+
+GET
+/api/fund/fundReal
+Real-time Funds Flow (VIP3)
+
+
+GET
+/api/fund/getFundHisList
+Fund flow historical data (VIP3)
+
+FundingRate
+
+
+GET
+/api/fundingRate/hist
+Historical Settlement Funding Rate (VIP1)
+
+
+GET
+/api/fundingRate/current
+Real-time FundingRate(VIP1)
+
+
+GET
+/api/fundingRate/accumulated
+Accumulated FundingRate(VIP1)
+
+
+GET
+/api/fundingRate/indicator
+Trading Pair Funding Rate History(VIP1)
+
+
+GET
+/api/fundingRate/kline
+Trading Pair Funding Rate Kline(VIP1)
+
+
+GET
+/api/fundingRate/getWeiFr
+Weighted FundingRate(VIP1)
+
+
+GET
+/api/fundingRate/frHeatmap
+FundingRate Heatmap (VIP3)
+
+Longshort
+
+
+GET
+/api/longshort/buySell
+Coin bue/sell （(VIP1)
+
+
+GET
+/api/longshort/realtimeAll
+Exchange Real-time long-short ratio (VIP1)
+
+
+GET
+/api/longshort/person
+Global Account Ratio(VIP1)
+
+
+GET
+/api/longshort/position
+Top Trader Long/Short Ratio(Position) (VIP1)
+
+
+GET
+/api/longshort/account
+Top Trader Long/Short Ratio (Accounts) (VIP1)
+
+
+GET
+/api/longshort/kline
+Long short ratio k line (VIP1)
+
+Net Long & Net Short
+
+
+GET
+/api/netPositions/getNetPositions
+Net long & Net short (VIP3)
+
+OrderBook
+
+
+GET
+/api/orderBook/v2/bySymbol
+Trading Pair Order Book Difference (VIP3)
+
+
+GET
+/api/orderBook/v2/byExchange
+Exchange Order Book Difference (VIP3)
+
+
+GET
+/api/orderBook/getHeatMap
+OrderBook Heatmap (VIP4)
+
+OrderFlow
+
+
+GET
+/api/orderFlow/lists
+OrderFlow List (VIP3)
+
+RsiMap
+
+
+GET
+/api/rsiMap/list
+RsiMap （VIP2)
+
+BigOrder
+
+
+GET
+/api/bigOrder/queryOrderList
+Large Limit Order （VIP3)
+
+
+GET
+/api/trades/largeTrades
+Large Maker Order （VIP3)
+
+Popular Ranking
+
+
+GET
+/api/instruments/oiRank
+Open Interest Ranking （VIP2)
+
+
+GET
+/api/trades/count
+Transactions Ranking （VIP2)
+
+
+GET
+/api/instruments/liquidationRank
+Liquidation Ranking（VIP2)
+
+
+GET
+/api/instruments/priceRank
+PriceChg Ranking（VIP2)
+
+
+GET
+/api/instruments/volumeRank
+VolumeChg Ranking （VIP2)
+
+KLine
+
+
+GET
+/api/kline/lists
+Kline （VIP1）
+
+Indicator Data
+
+
+GET
+/api/indicator/getBtcMultiplier
+2-Year MA Multiplier(VIP1)
+
+
+GET
+/api/indicator/getBtcPi
+Pi Cycle Top Indicator(VIP1)
+
+
+GET
+/api/indicator/getCnnEntity
+Fear & Greed (VIP1)
+
+
+GET
+/api/indicator/getAhr999
+BTC Ahr999 Index(VIP1)
+
+
+GET
+/api/indicator/getMarketCapRank
+BTC Market Cap(VIP1)
+
+
+GET
+/api/indicator/getPuellMultiple
+The Puell Multiple(VIP1)
+
+
+GET
+/api/indicator/getMovingAvgHeatmap
+200 Week Moving Average Heatmap(VIP1)
+
+
+GET
+/api/indicator/getGrayscaleOpenInterest
+Grayscale BTC Holdings(VIP)
+
+
+GET
+/api/indicator/getAltcoinSeason
+AltCoinSeation(VIP)
+
+
+GET
+/api/indicator/index/charts
+Special Indicator Data(VIP1)
